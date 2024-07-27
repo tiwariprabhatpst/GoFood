@@ -27,7 +27,7 @@ export default function Navbar() {
                                 <Link className="nav-link active fs-5" aria-current="page" to="#">Home</Link>
                             </li>
                             {(localStorage.getItem("authToken"))?
-                                <Link className="nav-link active fs-5" aria-current="page" to="/">My Orders</Link>
+                                <Link className="nav-link active fs-5" aria-current="page" to="/myOrder">My Orders</Link>
                                 : ""
                             }
                         </ul>
@@ -39,7 +39,7 @@ export default function Navbar() {
                             <Link className="btn bg-white text-success mx-1" to="/creatuser">SignUp</Link>
                             </div>
                             :<div className='d-flex'>
-                                <div className="btn bg-white text-success mx-1" onClick={()=>{setCartView(true)}}>My Cart
+                                <div className="btn bg-white text-success mx-2" onClick={()=>{setCartView(true)}}>My Cart
                                 <Badge pill bg='danger'>{data.length}</Badge>
                                 </div>
                                 {cartView? <Modal onClose={()=>{setCartView(false)}}><Cart /></Modal> :null}
